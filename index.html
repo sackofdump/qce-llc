@@ -76,12 +76,13 @@
       font-size: 0.75rem;
       color: #444;
       letter-spacing: 0.05em;
+      overflow: hidden;
     }
 
     .card-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 60%;
+      max-height: 60%;
+      object-fit: contain;
       display: block;
     }
 
@@ -120,14 +121,13 @@
     <h2>Projects</h2>
     <div class="projects">
 
-      <a class="card" href="#">
+      <a class="card" href="https://portalyze.app" target="_blank" rel="noopener">
         <div class="card-thumb">
-          <!-- Replace src with your image, or swap the div for an <img> -->
-          PROJECT IMAGE
+          <img src="portfolio-compass.png" alt="Portfolio Compass" />
         </div>
         <div class="card-body">
-          <h3>Project One</h3>
-          <p>Short description of the project.</p>
+          <h3>Portfolio Compass</h3>
+          <p>portalyze.app</p>
         </div>
       </a>
 
