@@ -10,8 +10,8 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0d0d0d;
-      color: #f0f0f0;
+      background: #0a0a0f;
+      color: #e8e8f0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -19,11 +19,12 @@
 
     header {
       padding: 0;
-      border-bottom: 1px solid #ddd;
       background: #fff;
       text-align: center;
       overflow: hidden;
       height: 80px;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.08);
     }
 
     .header-brand img {
@@ -35,84 +36,99 @@
 
     main {
       flex: 1;
-      padding: 3rem 2rem;
-      max-width: 960px;
+      padding: 4rem 2rem;
+      max-width: 1100px;
       width: 100%;
       margin: 0 auto;
     }
 
-    main h2 {
-      font-size: 1.1rem;
-      font-weight: 500;
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #888;
-      margin-bottom: 2rem;
+      letter-spacing: 0.18em;
+      color: #555;
+      margin-bottom: 2.5rem;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.5rem;
     }
 
     .card {
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 6px;
+      background: #111118;
+      border: 1px solid #1e1e2e;
+      border-radius: 12px;
       overflow: hidden;
-      transition: border-color 0.2s;
       text-decoration: none;
       color: inherit;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .card:hover {
-      border-color: #555;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      border-color: #333;
     }
 
     .card-thumb {
       width: 100%;
       aspect-ratio: 16/9;
-      background: #222;
+      background: #18181f;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
-      color: #444;
-      letter-spacing: 0.05em;
       overflow: hidden;
+      border-bottom: 1px solid #1e1e2e;
     }
 
     .card-thumb img {
-      max-width: 60%;
-      max-height: 60%;
+      max-width: 55%;
+      max-height: 65%;
       object-fit: contain;
       display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-thumb img {
+      transform: scale(1.05);
     }
 
     .card-body {
-      padding: 1rem;
+      padding: 1.1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1;
     }
 
     .card-body h3 {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.4rem;
+      color: #eeeef8;
     }
 
-    .card-body p {
-      font-size: 0.85rem;
+    .card-url {
+      font-size: 0.78rem;
+      color: #555;
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    .card:hover .card-url {
       color: #888;
-      line-height: 1.5;
     }
 
     footer {
-      padding: 1.5rem 2rem;
+      padding: 2rem;
       text-align: center;
-      font-size: 0.75rem;
-      color: #444;
-      border-top: 1px solid #222;
+      font-size: 0.72rem;
+      color: #333;
+      letter-spacing: 0.05em;
+      border-top: 1px solid #15151f;
     }
   </style>
 </head>
@@ -120,12 +136,12 @@
 
   <header>
     <div class="header-brand">
-      <img src="qce-llc-logo.png" alt="QCE LLC Logo" />
+      <img src="qce-llc-logo.png" alt="QCE LLC" />
     </div>
   </header>
 
   <main>
-    <h2>Projects</h2>
+    <p class="section-label">Projects</p>
     <div class="projects">
 
       <a class="card" href="https://portalyze.app" target="_blank" rel="noopener">
@@ -134,7 +150,7 @@
         </div>
         <div class="card-body">
           <h3>Portfolio Compass</h3>
-          <p>portalyze.app</p>
+          <span class="card-url">portalyze.app</span>
         </div>
       </a>
 
@@ -144,7 +160,27 @@
         </div>
         <div class="card-body">
           <h3>Quick Cards</h3>
-          <p>quickcards.shop</p>
+          <span class="card-url">quickcards.shop</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://rrewards.vercel.app" target="_blank" rel="noopener">
+        <div class="card-thumb" style="background:#111;">
+          <img src="reward-logo.png" alt="Rewards" />
+        </div>
+        <div class="card-body">
+          <h3>Rewards</h3>
+          <span class="card-url">rrewards.vercel.app</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://school-pickup-app-henna.vercel.app/" target="_blank" rel="noopener">
+        <div class="card-thumb" style="background:#f8f8ff;">
+          <img src="pickmeup-logo.png" alt="PickMeUp Kids" />
+        </div>
+        <div class="card-body">
+          <h3>PickMeUp Kids</h3>
+          <span class="card-url">school-pickup-app-henna.vercel.app</span>
         </div>
       </a>
 
